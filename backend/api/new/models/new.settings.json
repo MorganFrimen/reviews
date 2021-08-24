@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news",
+  "info": {
+    "name": "new"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "data": {
+      "type": "date"
+    }
+  }
+}
