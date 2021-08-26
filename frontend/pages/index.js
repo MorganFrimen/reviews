@@ -1,6 +1,7 @@
 import { gql, useQuery } from '@apollo/client';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 export default function Home() {
   const { loading, error, data } = useQuery(REVIEWS);
@@ -20,8 +21,12 @@ export default function Home() {
       <main className={styles.main}>
         {data.reviews.map((review) => (
           <div key={review.id}>
+            <strong>{review.rating}</strong>
             <h2>{review.title}</h2>
             <p>{review.body.substring(0, 100)}</p>
+            <Link href="/review/[RevieweDetails]" as={`/review/${review.id}`}>
+              <a>Подробнее</a>
+            </Link>
           </div>
         ))}
       </main>
