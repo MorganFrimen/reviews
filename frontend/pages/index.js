@@ -24,7 +24,7 @@ export default function Home() {
             <strong>{review.rating}</strong>
             <h2>{review.title}</h2>
             <p>{review.body.substring(0, 100)}</p>
-            <Link href="/review/[RevieweDetails]" as={`/review/${review.id}`}>
+            <Link href="/review/[id]" as={`/review/${review.id}`}>
               <a>Подробнее</a>
             </Link>
           </div>
